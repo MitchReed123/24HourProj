@@ -13,7 +13,7 @@ namespace Project.Data
         [Key]
         public int Id { get; set; }
         [ForeignKey(nameof(Author))]
-        public int UserID { get; set; }
+        public Guid UserID { get; set; }
         public User Author { get; set; }
         [Required]
         public string Title { get; set; }
