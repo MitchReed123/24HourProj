@@ -54,12 +54,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="PostService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Project.Data\Project.Data.csproj">
+      <Project>{5D1B825C-EE1C-40F0-930B-99B27D96C28E}</Project>
+      <Name>Project.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Project.Models\Project.Models.csproj">
+      <Project>{B469380C-BA38-40AF-BBDA-A9FD3EB34239}</Project>
+      <Name>Project.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
