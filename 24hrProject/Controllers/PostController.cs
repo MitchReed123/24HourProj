@@ -38,11 +38,24 @@ namespace _24hrProject.Controllers
             return Ok();
         }
 
-        //public IHttpActionResult Get(int id)
-        //{
-        //    PostService postService = CreatePostService();
-        //    var post = postService.
-        //}
+        public IHttpActionResult Get(int id)
+        {
+            PostService postService = CreatePostService();
+            var note = postService.GetPostById(id);
+            return Ok(note);
+        }
+        public IHttpActionResult Put(PostEdit note)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var service = CreatePostService();
+
+            if (!service.UpdatePost(note))
+                return InternalServerError();
+
+            return Ok();
+        }
 
         public IHttpActionResult Delete(int id)
         {
