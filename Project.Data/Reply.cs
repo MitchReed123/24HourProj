@@ -10,8 +10,8 @@ namespace Project.Data
 {
     public class Reply : Comment
     {
-        [ForeignKey(nameof(ReplyComment))]
-        public Guid CommentID { get; set; }
+        //[ForeignKey(nameof(ReplyComment))]
+        //public Guid CommentID { get; set; }
         public Comment ReplyComment { get; set; }
     }
 }
