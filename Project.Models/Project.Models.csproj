@@ -57,6 +57,7 @@
     <Compile Include="CommentCreate.cs" />
     <Compile Include="CommentItem.cs" />
     <Compile Include="CreatePost.cs" />
+    <Compile Include="LikeCreate.cs" />
     <Compile Include="PostEdit.cs" />
     <Compile Include="PostItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
