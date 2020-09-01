@@ -85,9 +85,13 @@
     <Compile Include="Migrations\202009011338463_PostRefactor.Designer.cs">
       <DependentUpon>202009011338463_PostRefactor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202009011517196_Empty.cs" />
-    <Compile Include="Migrations\202009011517196_Empty.Designer.cs">
-      <DependentUpon>202009011517196_Empty.cs</DependentUpon>
+    <Compile Include="Migrations\202009011501591_CommentTests.cs" />
+    <Compile Include="Migrations\202009011501591_CommentTests.Designer.cs">
+      <DependentUpon>202009011501591_CommentTests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009011526485_CommentImplement.cs" />
+    <Compile Include="Migrations\202009011526485_CommentImplement.Designer.cs">
+      <DependentUpon>202009011526485_CommentImplement.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Post.cs" />
@@ -107,8 +111,11 @@
     <EmbeddedResource Include="Migrations\202009011338463_PostRefactor.resx">
       <DependentUpon>202009011338463_PostRefactor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202009011517196_Empty.resx">
-      <DependentUpon>202009011517196_Empty.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202009011501591_CommentTests.resx">
+      <DependentUpon>202009011501591_CommentTests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009011526485_CommentImplement.resx">
+      <DependentUpon>202009011526485_CommentImplement.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

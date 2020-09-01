@@ -18,6 +18,8 @@ namespace Project.Services
             _userId = userId;
         }
 
+
+
         public bool CreatePost(CreatePost model)
         {
             var entity = new Post()
@@ -25,8 +27,9 @@ namespace Project.Services
                 OwnerId = _userId,
                 Title = model.Title,
                 Text = model.Text,
+                
             };
-
+        
             using (var ctx = new ApplicationDbContext())
             {
                 ctx.Posts.Add(entity);
