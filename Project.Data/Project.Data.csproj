@@ -85,6 +85,10 @@
     <Compile Include="Migrations\202009011338463_PostRefactor.Designer.cs">
       <DependentUpon>202009011338463_PostRefactor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202009011517196_Empty.cs" />
+    <Compile Include="Migrations\202009011517196_Empty.Designer.cs">
+      <DependentUpon>202009011517196_Empty.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Post.cs" />
     <Compile Include="IdentityModels.cs" />
@@ -102,6 +106,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202009011338463_PostRefactor.resx">
       <DependentUpon>202009011338463_PostRefactor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009011517196_Empty.resx">
+      <DependentUpon>202009011517196_Empty.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

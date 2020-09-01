@@ -1,4 +1,5 @@
 ﻿using Project.Data;
+using Project.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Project.Services
 {
-    class LikeService
+    public class LikeService
     {
         private readonly Guid _userId;
 
@@ -21,7 +22,7 @@ namespace Project.Services
             var entity = new Like()
             {
                 UserId = _userId,
-                Post = model.Post,
+                PostId = model.PostId,
             };
 
             using (var ctx = new ApplicationDbContext())
@@ -42,9 +43,7 @@ namespace Project.Services
                     .Select(
                         e => new LikeCreate
                         {
-                            PostId = e.Id,
-                            Title = e.Title,
-                            Text = e.Text,
+                            PostId = e.PostId
                         }
                         );
                 return query.ToArray();
@@ -56,7 +55,7 @@ namespace Project.Services
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
-                    ctx.Likes.Single(e => e.Id == LikeId && e.UserID == _userId);
+                    ctx.Likes.Single(e => e.Id == likeId && e.UserId == _userId);
                 ctx.Likes.Remove(entity);
 
                 return ctx.SaveChanges() == 1;
