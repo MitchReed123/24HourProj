@@ -9,12 +9,13 @@ namespace Project.Data
 {
     public class Like
     {
+        public int Id { get; set; }
         [ForeignKey(nameof(Post))]
         public int PostID { get; set; }
         public virtual Post Post { get; set; }
 
         [ForeignKey(nameof(User))]
-        public int UserID { get; set; }
+        public Guid UserID { get; set; }
         public virtual User User { get; set; }
     }
 }
