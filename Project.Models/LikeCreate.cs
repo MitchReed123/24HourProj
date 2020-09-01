@@ -8,10 +8,9 @@ using System.Threading.Tasks;
 
 namespace Project.Models
 {
-    public class CreatePost
+    class LikeCreate
     {
         [Required]
-        public string Title { get; set; }
-        public string Text { get; set; }
+        public Post Post { get; set; }
     }
 }
