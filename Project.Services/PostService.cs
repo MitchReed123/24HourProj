@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Mvc;
 
 namespace Project.Services
 {
@@ -21,7 +22,7 @@ namespace Project.Services
         {
             var entity = new Post()
             {
-                UserID = _userId,
+                OwnerId = _userId,
                 Title = model.Title,
                 Text = model.Text,
             };
@@ -40,10 +41,9 @@ namespace Project.Services
                 var query =
                     ctx
                     .Posts
-                    .Where(e => e.UserID == _userId)
+                    .Where(e => e.OwnerId == _userId)
                     .Select(
-                        e =>
-                        new PostItem
+                        e => new PostItem
                         {
                             PostId = e.Id,
                             Title = e.Title,
@@ -54,12 +54,32 @@ namespace Project.Services
             }
         }
 
+        public PostItem GetPostById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx
+                    .Posts
+                    .Single(e => e.Id == id && e.OwnerId == _userId);
+                return
+                    new PostItem
+                    {
+                        PostId = entity.Id,
+                        Title = entity.Title,
+                        Text = entity.Text,
+
+                    };
+            }
+        }
+
         public bool UpdatePost(PostEdit model)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
-                    ctx.Posts.Single(e => e.Id == model.Id && e.UserID == _userId);
+                    ctx
+                        .Posts
+                        .Single(e => e.Id == model.PostId && e.OwnerId == _userId);
                 entity.Title = model.Title;
                 entity.Text = model.Text;
 
@@ -72,7 +92,7 @@ namespace Project.Services
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
-                    ctx.Posts.Single(e => e.Id == postId && e.UserID == _userId);
+                    ctx.Posts.Single(e => e.Id == postId && e.OwnerId == _userId);
                 ctx.Posts.Remove(entity);
 
                 return ctx.SaveChanges() == 1;

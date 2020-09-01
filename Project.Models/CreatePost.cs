@@ -9,7 +9,7 @@ namespace Project.Models
 {
     public class CreatePost
     {
-        public User user { get; set; }
+        //public User User { get; set; }
         public string Title { get; set; }
         public string Text { get; set; }
     }

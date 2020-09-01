@@ -12,10 +12,10 @@ namespace Project.Data
     public class Comment
     {
         [Key]
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         [ForeignKey(nameof(Author))]
-        public int UserID { get; set; }
+        public Guid UserID { get; set; }
         public virtual User Author { get; set; }
 
         [ForeignKey(nameof(CommentPost))]
