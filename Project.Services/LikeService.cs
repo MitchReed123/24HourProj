@@ -37,10 +37,7 @@ namespace Project.Services
             using (var ctx = new ApplicationDbContext())
             {
                 var query =
-                    ctx
-                    .Likes
-                    .Where(e => e.UserId == _userId)
-                    .Select(
+                    ctx.Likes.Where(e => e.UserId == _userId).Select(
                         e => new LikeCreate
                         {
                             PostId = e.PostId
