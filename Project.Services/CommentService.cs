@@ -10,6 +10,19 @@ namespace Project.Services
 {
     public class CommentService
     {
+        public IEnumerable<CommentItem> GetCommentItem( ICollection<Comment> comments)
+        {
+            return comments.Select(c => new CommentItem
+            {
+                Id = c.Id,
+                Replies = c.Replies.Select(r=> new ReplyItem
+                {
+                    Id = r.Id,
+                    Text = r.Text
+                })
+            });
+        }
+
         public bool CreateComment(CommentCreate model)
         {
             var entity = new Comment()
@@ -28,14 +41,11 @@ namespace Project.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var query = ctx
-                    .Comments
-                    .Select(e => new CommentItem
+                var query = ctx.Comments.Select(e => new CommentItem
                     {
                         Id = e.Id,
                         Text = e.Text,
-                        PostId = e.PostId,
-                        Replies = e.Replies
+                        //Replies = e.Replies
                     }
                     );
                 return query.ToArray();
@@ -56,7 +66,7 @@ namespace Project.Services
                             Id = e.Id,
                             Text = e.Text,
                             PostId = e.PostId,
-                            Replies = e.Replies
+                            //Replies = e.Replies
                         }
                         );
                 return query.ToArray();

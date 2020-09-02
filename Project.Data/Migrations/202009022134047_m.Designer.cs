@@ -7,13 +7,13 @@ namespace Project.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class CommentTests : IMigrationMetadata
+    public sealed partial class m : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(CommentTests));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(m));
         
         string IMigrationMetadata.Id
         {
-            get { return "202009011501591_CommentTests"; }
+            get { return "202009022134047_m"; }
         }
         
         string IMigrationMetadata.Source

@@ -15,7 +15,7 @@ namespace Project.Models
         //[ForeignKey(nameof(ReplyComment))]
         public int CommentId { get; set; }
 
-        public Comment ReplyComment { get; set; }
+        public CommentItem ReplyComment { get; set; }
 
 
     }

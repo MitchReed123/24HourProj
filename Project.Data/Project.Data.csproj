@@ -78,29 +78,9 @@
   <ItemGroup>
     <Compile Include="Comment.cs" />
     <Compile Include="Like.cs" />
-    <Compile Include="Migrations\202008312039300_InitialCreate.cs" />
-    <Compile Include="Migrations\202008312039300_InitialCreate.Designer.cs">
-      <DependentUpon>202008312039300_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202009011338463_PostRefactor.cs" />
-    <Compile Include="Migrations\202009011338463_PostRefactor.Designer.cs">
-      <DependentUpon>202009011338463_PostRefactor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202009011501591_CommentTests.cs" />
-    <Compile Include="Migrations\202009011501591_CommentTests.Designer.cs">
-      <DependentUpon>202009011501591_CommentTests.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202009011526485_CommentImplement.cs" />
-    <Compile Include="Migrations\202009011526485_CommentImplement.Designer.cs">
-      <DependentUpon>202009011526485_CommentImplement.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202009021402307_ReplyTests.cs" />
-    <Compile Include="Migrations\202009021402307_ReplyTests.Designer.cs">
-      <DependentUpon>202009021402307_ReplyTests.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202009021502077_Test.cs" />
-    <Compile Include="Migrations\202009021502077_Test.Designer.cs">
-      <DependentUpon>202009021502077_Test.cs</DependentUpon>
+    <Compile Include="Migrations\202009022134047_m.cs" />
+    <Compile Include="Migrations\202009022134047_m.Designer.cs">
+      <DependentUpon>202009022134047_m.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Post.cs" />
@@ -114,23 +94,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202008312039300_InitialCreate.resx">
-      <DependentUpon>202008312039300_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202009011338463_PostRefactor.resx">
-      <DependentUpon>202009011338463_PostRefactor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202009011501591_CommentTests.resx">
-      <DependentUpon>202009011501591_CommentTests.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202009011526485_CommentImplement.resx">
-      <DependentUpon>202009011526485_CommentImplement.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202009021402307_ReplyTests.resx">
-      <DependentUpon>202009021402307_ReplyTests.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202009021502077_Test.resx">
-      <DependentUpon>202009021502077_Test.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202009022134047_m.resx">
+      <DependentUpon>202009022134047_m.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

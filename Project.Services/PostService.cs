@@ -12,6 +12,7 @@ namespace Project.Services
     public class PostService
     {
         private readonly Guid _userId;
+        private CommentService _commentService = new CommentService();
 
         public PostService(Guid userId)
         {
@@ -38,7 +39,7 @@ namespace Project.Services
         }
 
         public IEnumerable<PostItem> GetPosts()
-        {
+        { 
             using (var ctx = new ApplicationDbContext())
             {
                 var query =
@@ -51,9 +52,9 @@ namespace Project.Services
                             Id = e.Id,
                             Title = e.Title,
                             Text = e.Text,
-                            Comments = e.Comments
+                            Comments = _commentService.GetCommentItem(e.Comments)
                         }
-                        );
+                        ); ; ;
                 return query.ToArray();
             }
         }
@@ -72,7 +73,7 @@ namespace Project.Services
                             Id = e.Id,
                             Title = e.Title,
                             Text = e.Text,
-                            Comments = e.Comments
+                            Comments = _commentService.GetCommentItem(e.Comments)
                         }
                         );
                 return query.ToArray();

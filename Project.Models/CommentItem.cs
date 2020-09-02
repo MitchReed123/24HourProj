@@ -13,12 +13,13 @@ namespace Project.Models
     public class CommentItem
     {
         public int Id { get; set; }
-        public string Text { get; set; }
 
         //[ForeignKey("CommentPost")]
         public int PostId { get; set; }
         public Post CommentPost { get; set; }
+        
+        public string Text { get; set; }
 
-        public IEnumerable<Reply> Replies { get; set; }
+        public IEnumerable<ReplyItem> Replies { get; set; }
     }
 }
