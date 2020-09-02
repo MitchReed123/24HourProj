@@ -48,7 +48,7 @@ namespace Project.Services
                     .Select(
                         e => new PostItem
                         {
-                            PostId = e.Id,
+                            Id = e.Id,
                             Title = e.Title,
                             Text = e.Text,
                             Comments = e.Comments
@@ -60,21 +60,6 @@ namespace Project.Services
 
         public IEnumerable<PostItem> GetPostById(int id)
         {
-            //using (var ctx = new ApplicationDbContext())
-            //{
-            //    var entity = ctx
-            //        .Posts
-            //        .Single(e => e.Id == id && e.OwnerId == _userId);
-            //    return
-            //        new PostItem
-            //        {
-            //            PostId = entity.Id,
-            //            Title = entity.Title,
-            //            Text = entity.Text,
-            //            Comments = entity.Comments
-
-            //        };
-            //}
             using (var ctx = new ApplicationDbContext())
             {
                 var query =
@@ -84,7 +69,7 @@ namespace Project.Services
                     .Select(
                         e => new PostItem
                         {
-                            PostId = e.Id,
+                            Id = e.Id,
                             Title = e.Title,
                             Text = e.Text,
                             Comments = e.Comments
@@ -101,7 +86,7 @@ namespace Project.Services
                 var entity =
                     ctx
                         .Posts
-                        .Single(e => e.Id == model.PostId && e.OwnerId == _userId);
+                        .Single(e => e.Id == model.Id && e.OwnerId == _userId);
                 entity.Title = model.Title;
                 entity.Text = model.Text;
 

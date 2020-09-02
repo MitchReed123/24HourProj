@@ -10,13 +10,13 @@ using System.Threading.Tasks;
 
 namespace Project.Models
 {
-    public class CommentCreate
+    public class ReplyItem : CommentItem
     {
-        public string Text { get; set; }
+        //[ForeignKey(nameof(ReplyComment))]
+        public int CommentId { get; set; }
 
-        //[ForeignKey("CommentPost")]
-        public int PostId { get; set; }
-        public Post CommentPost { get; set; }
+        public Comment ReplyComment { get; set; }
+
 
     }
 }
