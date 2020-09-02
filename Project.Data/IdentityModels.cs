@@ -48,6 +48,15 @@ namespace Project.Data
                 .Configurations
                 .Add(new IdentityUserLoginConfiguration())
                 .Add(new IdentityUserRoleConfiguration());
+
+            modelBuilder.Entity<Post>()
+                .HasMany<Comment>(p => p.Comments)
+                .WithRequired(c => c.CommentPost)
+                .HasForeignKey<int>(c => c.PostId);
+
+            //modelBuilder.Entity<Comment>()
+            //    .HasRequired<Post>(c => c.CommentPost)
+            //    .WithMany(p => p.Comments);
         }
     }
 

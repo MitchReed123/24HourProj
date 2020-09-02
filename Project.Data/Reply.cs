@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Dynamic;
 using System.Linq;
@@ -10,8 +11,6 @@ namespace Project.Data
 {
     public class Reply : Comment
     {
-        //[ForeignKey(nameof(ReplyComment))]
-        //public Guid CommentID { get; set; }
         public Comment ReplyComment { get; set; }
     }
 }
