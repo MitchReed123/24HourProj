@@ -35,29 +35,46 @@ namespace Project.Services
                         Id = e.Id,
                         Text = e.Text,
                         PostId = e.PostId,
-                        CommentPost = e.CommentPost
+                        Replies = e.Replies
                     }
                     );
                 return query.ToArray();
             }
         }
 
-        public Comment GetCommentById(int id)
+        public IEnumerable<CommentItem> GetCommentById(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity = ctx
+                var query =
+                    ctx
                     .Comments
-                    .Single(e => e.Id == id);
-                return
-                    new Comment
-                    {
-                        Id = entity.Id,
-                        Text = entity.Text,
-                        PostId = entity.PostId,
-                        CommentPost = entity.CommentPost
-                    };
+                    .Where(e => e.Id == id)
+                    .Select(
+                        e => new CommentItem
+                        {
+                            Id = e.Id,
+                            Text = e.Text,
+                            PostId = e.PostId,
+                            Replies = e.Replies
+                        }
+                        );
+                return query.ToArray();
             }
+
+            //using (var ctx = new ApplicationDbContext())
+            //{
+            //    var entity = ctx
+            //        .Comments
+            //        .Single(e => e.Id == id);
+            //    return
+            //        new Comment
+            //        {
+            //            Id = entity.Id,
+            //            Text = entity.Text,
+            //            PostId = entity.PostId
+            //        };
+            //}
         }
 
         public bool UpdateComment(Comment model)
