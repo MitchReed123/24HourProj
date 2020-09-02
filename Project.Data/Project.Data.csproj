@@ -67,6 +67,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -93,6 +94,14 @@
     <Compile Include="Migrations\202009011526485_CommentImplement.Designer.cs">
       <DependentUpon>202009011526485_CommentImplement.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202009021402307_ReplyTests.cs" />
+    <Compile Include="Migrations\202009021402307_ReplyTests.Designer.cs">
+      <DependentUpon>202009021402307_ReplyTests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009021502077_Test.cs" />
+    <Compile Include="Migrations\202009021502077_Test.Designer.cs">
+      <DependentUpon>202009021502077_Test.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Post.cs" />
     <Compile Include="IdentityModels.cs" />
@@ -116,6 +125,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202009011526485_CommentImplement.resx">
       <DependentUpon>202009011526485_CommentImplement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009021402307_ReplyTests.resx">
+      <DependentUpon>202009021402307_ReplyTests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009021502077_Test.resx">
+      <DependentUpon>202009021502077_Test.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

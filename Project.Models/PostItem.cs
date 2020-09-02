@@ -9,7 +9,7 @@ namespace Project.Models
 {
     public class PostItem
     {
-        public int PostId { get; set; }
+        public int Id { get; set; }
         public string Title { get; set; }
         public string Text { get; set; }
 

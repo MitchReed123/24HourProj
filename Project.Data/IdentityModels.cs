@@ -34,9 +34,9 @@ namespace Project.Data
 
         public DbSet<Post> Posts { get; set; }
         public DbSet<Comment> Comments { get; set; }
-        //public DbSet<Reply> Replies { get; set; }
+        public DbSet<Reply> Replies { get; set; }
         public DbSet<Like> Likes { get; set; }
-        //public DbSet<User> Users { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -53,6 +53,11 @@ namespace Project.Data
                 .HasMany<Comment>(p => p.Comments)
                 .WithRequired(c => c.CommentPost)
                 .HasForeignKey<int>(c => c.PostId);
+
+            modelBuilder.Entity<Comment>()
+                .HasMany<Reply>(c => c.Replies)
+                .WithRequired(r => r.ReplyComment)
+                .HasForeignKey<int>(r => r.CommentId);
 
             //modelBuilder.Entity<Comment>()
             //    .HasRequired<Post>(c => c.CommentPost)
