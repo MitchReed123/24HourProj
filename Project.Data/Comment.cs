@@ -17,8 +17,7 @@ namespace Project.Data
         [Required]
         public string Text { get; set; }
 
-        [ForeignKey("CommentPost")]
         public int PostId {get; set; }
-        public virtual Post CommentPost { get; set; }
+        public Post CommentPost { get; set; }
     }
 }

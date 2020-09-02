@@ -51,27 +51,46 @@ namespace Project.Services
                             PostId = e.Id,
                             Title = e.Title,
                             Text = e.Text,
+                            Comments = e.Comments
                         }
                         );
                 return query.ToArray();
             }
         }
 
-        public PostItem GetPostById(int id)
+        public IEnumerable<PostItem> GetPostById(int id)
         {
+            //using (var ctx = new ApplicationDbContext())
+            //{
+            //    var entity = ctx
+            //        .Posts
+            //        .Single(e => e.Id == id && e.OwnerId == _userId);
+            //    return
+            //        new PostItem
+            //        {
+            //            PostId = entity.Id,
+            //            Title = entity.Title,
+            //            Text = entity.Text,
+            //            Comments = entity.Comments
+
+            //        };
+            //}
             using (var ctx = new ApplicationDbContext())
             {
-                var entity = ctx
+                var query =
+                    ctx
                     .Posts
-                    .Single(e => e.Id == id && e.OwnerId == _userId);
-                return
-                    new PostItem
-                    {
-                        PostId = entity.Id,
-                        Title = entity.Title,
-                        Text = entity.Text,
-
-                    };
+                    .Where(e => e.Id == id && e.OwnerId == _userId)
+                    .Select(
+                        e => new PostItem
+                        {
+                            PostId = e.Id,
+                            Title = e.Title,
+                            Text = e.Text,
+                            Comments = e.Comments
+                        }
+                        );
+                return query.ToArray();
             }
         }
 
